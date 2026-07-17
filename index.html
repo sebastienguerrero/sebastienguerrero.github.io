@@ -214,41 +214,13 @@
             line-height: 1.7;
         }
 
+        .intro-text + .intro-text {
+            margin-top: 11px;
+        }
+
         .intro-text strong {
             color: var(--slate-900);
             font-weight: 600;
-        }
-
-        /* ── INTRO NOTE ── */
-        .intro-note {
-            max-width: 900px;
-            margin: 44px auto -6px;
-            padding: 0 24px;
-        }
-
-        .intro-note-inner {
-            background: white;
-            border: 1px solid var(--slate-200);
-            border-left: 3px solid var(--sky);
-            border-radius: 8px;
-            padding: 16px 20px;
-            font-size: 13.5px;
-            line-height: 1.7;
-            color: var(--slate-600);
-        }
-
-        .intro-note-inner strong {
-            color: var(--slate-900);
-            font-weight: 600;
-        }
-
-        .intro-note-title {
-            font-family: var(--mono);
-            font-size: 10.5px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--sky);
-            margin-bottom: 8px;
         }
 
         /* ── CONTACT ── */
@@ -281,6 +253,11 @@
             line-height: 1.25;
         }
 
+        .contact-text strong {
+            color: var(--slate-900);
+            font-weight: 600;
+        }
+
         .contact-text {
             font-size: 14px;
             color: var(--slate-600);
@@ -311,8 +288,8 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px 28px;
             border-top: 1px solid var(--slate-200);
             padding-top: 26px;
         }
@@ -351,7 +328,10 @@
             font-weight: 500;
             color: var(--slate-900);
             text-decoration: none;
-            word-break: break-word;
+            display: block;
+            word-break: normal;
+            overflow-wrap: anywhere;
+            line-height: 1.4;
         }
 
         a.contact-value:hover { color: var(--blue); text-decoration: underline; }
@@ -641,6 +621,10 @@
         }
 
         /* ── RESPONSIVE ── */
+        @media (max-width: 780px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 14px; }
+        }
+
         @media (max-width: 580px) {
             .timeline::before { left: 22px; }
             .tl-node { width: 34px; }
@@ -651,8 +635,9 @@
             .intro-note { margin-top: 32px; }
             .contact { padding: 40px 20px; }
             .contact-title { font-size: 1.3rem; }
-            .contact-grid { grid-template-columns: 1fr; gap: 12px; }
-            .intro-note-inner { padding: 14px 16px; font-size: 13px; }
+            .contact-value { font-size: 12.5px; }
+            .intro-inner { padding: 14px 16px; }
+            .intro-text { font-size: 13px; }
 
             /* Stats : grille 2x2 au lieu d'un flex qui casse */
             .stats-inner {
@@ -746,18 +731,13 @@
             <span class="en">About this portfolio</span>
         </div>
         <p class="intro-text">
-            <span class="fr">Les projets sont présentés dans leur ordre chronologique de réalisation. <strong>Cette progression est délibérément visible : elle est ce que ce portfolio donne à voir en premier.</strong> Les premiers dossiers posent les fondamentaux réseau et l'architecture. Les suivants introduisent le filtrage périmétrique, l'authentification centralisée et la haute disponibilité. Les derniers intègrent l'analyse de risque formelle, la détection d'intrusion et la réponse automatisée à incident, avec des attaques réellement exécutées puis détectées en laboratoire. La méthodologie, la profondeur technique et la qualité de restitution suivent la même courbe.</span>
-            <span class="en">Projects are presented in the chronological order in which they were completed. <strong>This progression is deliberately visible: it is the first thing this portfolio is meant to show.</strong> The early projects establish networking fundamentals and architecture. The following ones introduce perimeter filtering, centralised authentication and high availability. The latest ones bring in formal risk analysis, intrusion detection and automated incident response, with attacks actually executed and then detected in a lab environment. Methodology, technical depth and reporting quality follow the same curve.</span>
+            <span class="fr">Les projets sont présentés dans leur ordre chronologique de réalisation. Les premiers dossiers posent les fondamentaux réseau et l'architecture. Les suivants introduisent le filtrage périmétrique, l'authentification centralisée et la haute disponibilité. Les derniers intègrent l'analyse de risque formelle, la détection d'intrusion et la réponse automatisée à incident, avec des attaques réellement exécutées puis détectées en laboratoire.</span>
+            <span class="en">Projects are presented in the chronological order in which they were completed. The early projects establish networking fundamentals and architecture. The following ones introduce perimeter filtering, centralised authentication and high availability. The latest ones bring in formal risk analysis, intrusion detection and automated incident response, with attacks actually executed and then detected in a lab environment.</span>
         </p>
-    </div>
-</div>
-
-<!-- ── NOTE D'INTRO ── -->
-<div class="intro-note">
-    <div class="intro-note-inner">
-        <div class="intro-note-title"><span class="fr">À propos de ce portfolio</span><span class="en">About this portfolio</span></div>
-        <span class="fr">Les projets sont présentés dans leur ordre chronologique de réalisation. <strong>L'écart entre le premier et le dernier est volontairement visible</strong> : les premiers dossiers posent les fondamentaux réseau et l'architecture, les suivants introduisent le filtrage périmétrique, l'authentification centralisée et la haute disponibilité, les derniers intègrent l'analyse de risque formelle, la détection d'intrusion et la réponse automatisée à incident. La méthodologie, la profondeur technique et la qualité de restitution suivent la même courbe. Les projets les plus récents sont les plus représentatifs de mon niveau actuel.</span>
-        <span class="en">Projects are presented in the chronological order in which they were completed. <strong>The gap between the first and the last is deliberately left visible</strong>: the early projects establish networking fundamentals and architecture, the following ones introduce perimeter filtering, centralised authentication and high availability, the latest ones bring in formal risk analysis, intrusion detection and automated incident response. Methodology, technical depth and reporting quality follow the same curve. The most recent projects best represent my current level.</span>
+        <p class="intro-text">
+            <span class="fr">La méthodologie, la profondeur technique et la qualité de restitution suivent la même courbe. <strong>Cette progression est délibérément visible : les projets les plus récents sont les plus représentatifs de mon niveau actuel.</strong></span>
+            <span class="en">Methodology, technical depth and reporting quality follow the same curve. <strong>This progression is deliberately visible: the most recent projects best represent my current level.</strong></span>
+        </p>
     </div>
 </div>
 
@@ -1181,12 +1161,12 @@
     <div class="contact-inner">
         <div class="contact-eyebrow"><span class="fr">Disponibilité</span><span class="en">Availability</span></div>
         <h2 class="contact-title">
-            <span class="fr">Je recherche une alternance en cybersécurité</span>
-            <span class="en">Looking for an apprenticeship in cybersecurity</span>
+            <span class="fr">Je recherche une alternance</span>
+            <span class="en">Looking for a work-study apprenticeship</span>
         </h2>
         <p class="contact-text">
-            <span class="fr">Toulouse et sa région. Administration d'infrastructure sécurisée, détection et réponse à incident, analyse de risque. Disponible pour échanger sur un poste, un projet, ou simplement répondre à vos questions sur les dossiers présentés ci-dessus.</span>
-            <span class="en">Toulouse area, France. Secure infrastructure administration, detection and incident response, risk analysis. Happy to discuss a role, a project, or simply answer any questions about the work presented above.</span>
+            <span class="fr">Inscrit à l'IPI en <strong>Mastère professionnel Infra &amp; Cloud Xpert</strong> : Expert en architectures systèmes, réseaux et sécurité informatique. Je recherche l'entreprise qui m'accueillera en alternance, sur Toulouse et sa région. Disponible pour échanger sur vos besoins ou répondre à vos questions sur les dossiers présentés ci-dessus.</span>
+            <span class="en">Enrolled at IPI in a <strong>Professional Master's in Infrastructure &amp; Cloud</strong>: Expert in systems architecture, networking and information security. I am looking for the company that will host me under a work-study contract, in the Toulouse area of France. Happy to discuss your needs or answer any questions about the work presented above.</span>
         </p>
 
         <a class="contact-cv" href="cv/CV_Sebastien_GUERRERO.pdf" target="_blank" rel="noopener">
