@@ -184,6 +184,64 @@
             letter-spacing: 0.07em;
         }
 
+        /* ── INTRO NOTE ── */
+        .intro-note {
+            max-width: 900px;
+            margin: 44px auto -6px;
+            padding: 0 24px;
+        }
+
+        .intro-inner {
+            background: white;
+            border: 1px solid var(--slate-200);
+            border-left: 3px solid var(--sky);
+            border-radius: 10px;
+            padding: 18px 22px;
+        }
+
+        .intro-title {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--sky);
+            margin-bottom: 8px;
+        }
+
+        .intro-text {
+            font-size: 13.5px;
+            color: var(--slate-600);
+            line-height: 1.7;
+        }
+
+        .intro-text strong {
+            color: var(--slate-900);
+            font-weight: 600;
+        }
+
+        /* ── INTRO NOTE ── */
+        .intro-note {
+            max-width: 900px;
+            margin: 44px auto -6px;
+            padding: 0 24px;
+        }
+
+        .intro-note-inner {
+            background: white;
+            border: 1px solid var(--slate-200);
+            border-left: 3px solid var(--sky);
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: var(--slate-600);
+        }
+
+        .intro-note-inner strong {
+            color: var(--slate-900);
+            font-weight: 600;
+        }
+
         /* ── TOOLBAR ── */
         .toolbar {
             max-width: 900px;
@@ -265,7 +323,7 @@
             flex-direction: column;
             align-items: center;
             padding-top: 22px;
-            gap: 5px;
+            gap: 3px;
             position: relative;
             z-index: 1;
         }
@@ -286,6 +344,16 @@
             font-family: var(--mono);
             font-size: 10.5px;
             color: var(--slate-400);
+            line-height: 1.2;
+        }
+
+        .tl-date {
+            font-family: var(--mono);
+            font-size: 9.5px;
+            color: var(--slate-400);
+            opacity: 0.75;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
         /* Card */
@@ -461,11 +529,40 @@
         /* ── RESPONSIVE ── */
         @media (max-width: 580px) {
             .timeline::before { left: 22px; }
-            .tl-node { width: 30px; }
-            .legend { padding-left: 52px; }
-            .stats-inner { gap: 28px; }
+            .tl-node { width: 34px; }
+            .tl-date { font-size: 8.5px; }
             .project-card { padding: 14px 16px 12px; }
             header { padding-top: 84px; }
+
+            .intro-note { margin-top: 32px; }
+            .intro-note-inner { padding: 14px 16px; font-size: 13px; }
+
+            /* Stats : grille 2x2 au lieu d'un flex qui casse */
+            .stats-inner {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 18px 12px;
+            }
+            .stat-value { font-size: 1.35rem; }
+            .stat-label { font-size: 10px; }
+
+            /* Toolbar : empilée, plus de recouvrement de la légende */
+            .toolbar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+                margin-top: 32px;
+            }
+            .toggle-wrap { width: 100%; }
+            .toggle-btn { flex: 1; }
+
+            /* Légende : sous la toolbar, marge positive */
+            .legend {
+                margin-top: 14px;
+                margin-bottom: 4px;
+                padding-left: 24px;
+                gap: 14px;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -523,6 +620,28 @@
     </div>
 </div>
 
+<!-- ── INTRO ── -->
+<div class="intro-note">
+    <div class="intro-inner">
+        <div class="intro-title">
+            <span class="fr">À propos de ce portfolio</span>
+            <span class="en">About this portfolio</span>
+        </div>
+        <p class="intro-text">
+            <span class="fr">Les projets sont présentés dans leur ordre chronologique de réalisation. <strong>Cette progression est délibérément visible : elle est ce que ce portfolio donne à voir en premier.</strong> Les premiers dossiers posent les fondamentaux réseau et l'architecture. Les suivants introduisent le filtrage périmétrique, l'authentification centralisée et la haute disponibilité. Les derniers intègrent l'analyse de risque formelle, la détection d'intrusion et la réponse automatisée à incident, avec des attaques réellement exécutées puis détectées en laboratoire. La méthodologie, la profondeur technique et la qualité de restitution suivent la même courbe.</span>
+            <span class="en">Projects are presented in the chronological order in which they were completed. <strong>This progression is deliberately visible: it is the first thing this portfolio is meant to show.</strong> The early projects establish networking fundamentals and architecture. The following ones introduce perimeter filtering, centralised authentication and high availability. The latest ones bring in formal risk analysis, intrusion detection and automated incident response, with attacks actually executed and then detected in a lab environment. Methodology, technical depth and reporting quality follow the same curve.</span>
+        </p>
+    </div>
+</div>
+
+<!-- ── NOTE D'INTRO ── -->
+<div class="intro-note">
+    <div class="intro-note-inner">
+        <span class="fr">Les projets sont présentés dans l'ordre chronologique. <strong>L'écart entre le premier et le dernier est volontairement visible</strong> : il traduit neuf mois de progression, sur la technique comme sur la méthodologie et la restitution. Les projets les plus récents sont les plus représentatifs de mon niveau actuel.</span>
+        <span class="en">Projects are listed in chronological order. <strong>The gap between the first and the last is deliberately left visible</strong>: it reflects nine months of progression, in technical depth as much as in methodology and reporting. The most recent projects best represent my current level.</span>
+    </div>
+</div>
+
 <!-- ── TOOLBAR ── -->
 <div class="toolbar">
     <span class="toolbar-label">
@@ -553,6 +672,7 @@
         <div class="tl-node" aria-hidden="true">
             <div class="tl-dot intermediate"></div>
             <div class="tl-num">01</div>
+            <div class="tl-date">10/25</div>
         </div>
         <div class="project-card">
             <div class="card-top">
@@ -601,6 +721,7 @@
         <div class="tl-node" aria-hidden="true">
             <div class="tl-dot intermediate"></div>
             <div class="tl-num">02</div>
+            <div class="tl-date">11/25</div>
         </div>
         <div class="project-card">
             <div class="card-top">
@@ -648,6 +769,7 @@
         <div class="tl-node" aria-hidden="true">
             <div class="tl-dot advanced"></div>
             <div class="tl-num">03</div>
+            <div class="tl-date">01/26</div>
         </div>
         <div class="project-card">
             <div class="card-top">
@@ -696,6 +818,7 @@
         <div class="tl-node" aria-hidden="true">
             <div class="tl-dot advanced"></div>
             <div class="tl-num">04</div>
+            <div class="tl-date">01/26</div>
         </div>
         <div class="project-card">
             <div class="card-top">
@@ -743,6 +866,7 @@
         <div class="tl-node" aria-hidden="true">
             <div class="tl-dot advanced"></div>
             <div class="tl-num">05</div>
+            <div class="tl-date">02/26</div>
         </div>
         <div class="project-card">
             <div class="card-top">
@@ -790,6 +914,7 @@
         <div class="tl-node" aria-hidden="true">
             <div class="tl-dot advanced"></div>
             <div class="tl-num">06</div>
+            <div class="tl-date">03/26</div>
         </div>
         <div class="project-card">
             <div class="card-top">
@@ -837,6 +962,7 @@
         <div class="tl-node" aria-hidden="true">
             <div class="tl-dot advanced"></div>
             <div class="tl-num">07</div>
+            <div class="tl-date">06/26</div>
         </div>
         <div class="project-card">
             <div class="card-top">
@@ -884,6 +1010,7 @@
         <div class="tl-node" aria-hidden="true">
             <div class="tl-dot advanced"></div>
             <div class="tl-num">08</div>
+            <div class="tl-date">07/26</div>
         </div>
         <div class="project-card">
             <div class="card-top">
@@ -932,7 +1059,7 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-    <p>Sébastien Guerrero &nbsp;·&nbsp; <a href="https://github.com/sebastienguerrero" target="_blank" rel="noopener">GitHub</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/sebastienguerrero" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p>Sébastien Guerrero &nbsp;·&nbsp; <a href="https://github.com/sebastienguerrero" target="_blank" rel="noopener">GitHub</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/s%C3%A9bastien-guerrero" target="_blank" rel="noopener">LinkedIn</a></p>
     <p class="footer-mono">
         <span class="fr">Projets réalisés en environnement de laboratoire virtualisé · Toutes adresses IP et données sont fictives</span>
         <span class="en">Projects carried out in virtualized lab environments · All IP addresses and data are fictitious</span>
