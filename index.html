@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sébastien Guerrero · Portfolio Cybersécurité &amp; Réseaux</title>
+    <meta name="description" content="Portfolio de 8 projets en cybersécurité et réseaux : segmentation VLAN, DMZ, RADIUS, SIEM, sécurisation Active Directory. Étudiant en Mastère à l'IPI, recherche une alternance à Toulouse.">
+    <meta name="author" content="Sébastien Guerrero">
+
+    <!-- Open Graph (LinkedIn, Facebook, iMessage...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sebastienguerrero.github.io/">
+    <meta property="og:title" content="Sébastien Guerrero · Portfolio Cybersécurité &amp; Réseaux">
+    <meta property="og:description" content="8 projets techniques, du réseau d'entreprise à la détection d'intrusion et la réponse automatisée sur Active Directory. Recherche une alternance à Toulouse.">
+    <meta property="og:image" content="https://sebastienguerrero.github.io/preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sébastien Guerrero · Portfolio Cybersécurité &amp; Réseaux">
+    <meta name="twitter:description" content="8 projets techniques, du réseau d'entreprise à la sécurité Active Directory. Recherche une alternance à Toulouse.">
+    <meta name="twitter:image" content="https://sebastienguerrero.github.io/preview.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -182,6 +200,59 @@
             margin-top: 5px;
             font-family: var(--mono);
             letter-spacing: 0.07em;
+        }
+
+        /* ── SKILLS ── */
+        .skills {
+            background: white;
+            border-bottom: 1px solid var(--slate-200);
+            padding: 40px 24px 44px;
+        }
+
+        .skills-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skills-eyebrow {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--sky);
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px 26px;
+        }
+
+        .skill-cat-title {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+            padding-bottom: 7px;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            background: var(--bg);
+            color: var(--slate-700);
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--slate-200);
         }
 
         /* ── INTRO NOTE ── */
@@ -621,6 +692,10 @@
         }
 
         /* ── RESPONSIVE ── */
+        @media (max-width: 820px) {
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 780px) {
             .contact-grid { grid-template-columns: 1fr; gap: 14px; }
         }
@@ -633,6 +708,8 @@
             header { padding-top: 84px; }
 
             .intro-note { margin-top: 32px; }
+            .skills { padding: 32px 20px 36px; }
+            .skills-grid { grid-template-columns: 1fr; gap: 20px; }
             .contact { padding: 40px 20px; }
             .contact-title { font-size: 1.3rem; }
             .contact-value { font-size: 12.5px; }
@@ -723,6 +800,78 @@
     </div>
 </div>
 
+<!-- ── COMPÉTENCES ── -->
+<div class="skills">
+    <div class="skills-inner">
+        <div class="skills-eyebrow"><span class="fr">Domaines de compétences</span><span class="en">Areas of expertise</span></div>
+        <div class="skills-grid">
+            <div class="skill-cat">
+                <div class="skill-cat-title"><span class="fr">Réseau &amp; Infrastructure</span><span class="en">Networking &amp; Infrastructure</span></div>
+                <div class="skill-tags">
+                    <span class="skill-tag">VLAN / 802.1Q</span>
+                    <span class="skill-tag">Routage &amp; ACL</span>
+                    <span class="skill-tag">LACP</span>
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">DNS / DHCP</span>
+                    <span class="skill-tag">Hyper-V / VMware</span>
+                </div>
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-title"><span class="fr">Sécurité périmétrique</span><span class="en">Perimeter Security</span></div>
+                <div class="skill-tags">
+                    <span class="skill-tag">pfSense / OPNsense</span>
+                    <span class="skill-tag">DMZ</span>
+                    <span class="skill-tag">VPN / IPsec</span>
+                    <span class="skill-tag">PKI</span>
+                    <span class="skill-tag">Proxy / SNI</span>
+                    <span class="skill-tag">Haute dispo (CARP)</span>
+                </div>
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-title"><span class="fr">Authentification &amp; Accès</span><span class="en">Authentication &amp; Access</span></div>
+                <div class="skill-tags">
+                    <span class="skill-tag">RADIUS / 802.1X</span>
+                    <span class="skill-tag">Kerberos SSO</span>
+                    <span class="skill-tag">LDAPS</span>
+                    <span class="skill-tag">MFA</span>
+                    <span class="skill-tag">Tiering AD</span>
+                </div>
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-title"><span class="fr">Détection &amp; Réponse</span><span class="en">Detection &amp; Response</span></div>
+                <div class="skill-tags">
+                    <span class="skill-tag">SIEM (Wazuh)</span>
+                    <span class="skill-tag">Suricata IDS/IPS</span>
+                    <span class="skill-tag">Sysmon</span>
+                    <span class="skill-tag">SOAR</span>
+                    <span class="skill-tag">Supervision (Zabbix)</span>
+                    <span class="skill-tag">MITRE ATT&amp;CK</span>
+                </div>
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-title"><span class="fr">Gouvernance &amp; Méthode</span><span class="en">Governance &amp; Method</span></div>
+                <div class="skill-tags">
+                    <span class="skill-tag">EBIOS Risk Manager</span>
+                    <span class="skill-tag">PSSI</span>
+                    <span class="skill-tag">PRA / PCA</span>
+                    <span class="skill-tag">RGPD</span>
+                    <span class="skill-tag">Référentiel ANSSI</span>
+                </div>
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-title"><span class="fr">Offensif (test &amp; validation)</span><span class="en">Offensive (testing)</span></div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Kali Linux</span>
+                    <span class="skill-tag">Impacket</span>
+                    <span class="skill-tag">Mimikatz</span>
+                    <span class="skill-tag">Nmap</span>
+                    <span class="skill-tag">PingCastle</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- ── INTRO ── -->
 <div class="intro-note">
     <div class="intro-inner">
@@ -797,7 +946,7 @@
                 <span class="pill">Hyper-V</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">Refonte complète du réseau d'un centre de formation de 200 postes : d'un réseau à plat où tout le monde voyait tout, à une infrastructure cloisonnée par métier, avec serveurs redondés et Wi-Fi sécurisé.</span>
+                <span class="fr">Refonte complète du réseau d'un centre de formation de 200 postes : d'un réseau à plat où chacun voyait tout, à une infrastructure cloisonnée par métier, avec serveurs redondés et Wi-Fi sécurisé.</span>
                 <span class="en">Complete network redesign for a 200-workstation training center: from a flat network where everyone could see everything, to an infrastructure segmented by department, with redundant servers and secured Wi-Fi.</span>
             </div>
             <div class="card-content content-detail">
@@ -845,8 +994,8 @@
                 <span class="pill">NAT</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">A construit un accès à distance sécurisé pour que les employés travaillent de chez eux sans ouvrir de brèche dans l'entreprise.</span>
-                <span class="en">Built a secure remote access solution allowing employees to work from home without opening a breach into the company network.</span>
+                <span class="fr">Accès distant sécurisé permettant aux employés de travailler depuis chez eux, sans ouvrir de brèche dans le réseau de l'entreprise.</span>
+                <span class="en">Secure remote access letting employees work from home without opening a breach into the company network.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Déploiement VPN SSL OpenVPN sur pfSense avec authentification par certificat PKI et LDAPS vers AD, segmentation réseau dédiée en /30 par client et filtrage strict full tunnel. Mapping MITRE ATT&amp;CK T1133/T1078.</span>
@@ -894,8 +1043,8 @@
                 <span class="pill">SFTP chroot</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">A construit un mur numérique pour protéger les données sensibles d'une entreprise, conçu pour résister même si la partie exposée au public est compromise.</span>
-                <span class="en">Built a digital wall protecting a company's sensitive data, designed to hold even if the publicly exposed side is compromised.</span>
+                <span class="fr">Barrière numérique protégeant les données sensibles d'une entreprise, conçue pour tenir même si la partie exposée au public est compromise.</span>
+                <span class="en">Digital barrier protecting a company's sensitive data, designed to hold even if the publicly exposed side is compromised.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Architecture DMZ 3 zones sur OPNsense, filtrage default-deny par interface, SSH/SFTP chrooté RSA 4096, MariaDB sur port custom bind LAN, IDS Suricata multi-interfaces, sauvegarde Pull (le LAN tire depuis la DMZ, pas l'inverse).</span>
@@ -942,8 +1091,8 @@
                 <span class="pill">WPA2-Enterprise</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">A transformé un Wi-Fi d'entreprise en véritable sas de sécurité : chaque utilisateur est reconnu individuellement et aiguillé automatiquement vers le réseau qui lui correspond.</span>
-                <span class="en">Turned a corporate Wi-Fi into a genuine security gateway: every user is individually identified and automatically routed to the network matching their role.</span>
+                <span class="fr">Wi-Fi d'entreprise transformé en véritable sas de sécurité : chaque utilisateur est reconnu individuellement et dirigé automatiquement vers le réseau qui lui correspond.</span>
+                <span class="en">Corporate Wi-Fi turned into a genuine security gateway: every user is individually identified and automatically routed to the network matching their role.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Déploiement 802.1X/PEAP-MSCHAPv2 adossé à une PKI interne, VLAN dynamique par attributs RADIUS RFC 3580, cluster AD actif/actif, architecture de logs/backup Pull conforme ANSSI. Validation par pentest Nmap.</span>
@@ -990,8 +1139,8 @@
                 <span class="pill">LCEN / GDPR</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">A construit un accès Internet sécurisé qui reste disponible même en cas de panne matérielle, tout en respectant la loi sur la protection des données personnelles.</span>
-                <span class="en">Built a secured Internet access that stays available even during a hardware failure, while remaining compliant with personal data protection law.</span>
+                <span class="fr">Accès Internet sécurisé qui reste disponible même en cas de panne matérielle, dans le respect de la loi sur la protection des données personnelles.</span>
+                <span class="en">Secured Internet access that stays available even during a hardware failure, compliant with personal data protection law.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Cluster OPNsense CARP/pfSync avec filtrage SNI stateless (sans déchiffrement, conforme RGPD), SSO Kerberos via Keytab/GPO, Split-Horizon DNS. Résolution d'un conflit IPFW/PF sur le portail captif, bascule stateful validée.</span>
@@ -1038,8 +1187,8 @@
                 <span class="pill">RBAC LDAP</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">A construit un système d'alerte capable de détecter une panne avant qu'elle ne devienne un incident, et a lui-même provoqué sept pannes pour le prouver.</span>
-                <span class="en">Built an alerting system able to catch a failure before it turns into an incident, then deliberately triggered seven failures to prove it works.</span>
+                <span class="fr">Système d'alerte capable de détecter une panne avant qu'elle ne devienne un incident, validé par sept pannes provoquées volontairement pour le prouver.</span>
+                <span class="en">Alerting system able to catch a failure before it turns into an incident, validated through seven deliberately triggered failures.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Architecture Zabbix/Loki/Grafana en modèle Push strict, anti-Alert Fatigue par dépendance inter-triggers, RBAC via LDAP/AD. Validation par 7 scénarios de panne contrôlée ayant révélé un SPOF réel (co-hébergement Grafana/Loki).</span>
@@ -1086,8 +1235,8 @@
                 <span class="pill">DVWA</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">A construit de A à Z un système capable de détecter automatiquement les cyberattaques dans un laboratoire médical et d'alerter en moins d'une minute, en respectant les obligations légales de protection des données de santé.</span>
-                <span class="en">Built from scratch a system able to automatically detect cyberattacks in a medical laboratory and raise an alert in under a minute, while meeting the legal obligations around healthcare data protection.</span>
+                <span class="fr">Système de détection automatique des cyberattaques dans un laboratoire médical, conçu de A à Z, capable d'alerter en moins d'une minute dans le respect des obligations légales sur les données de santé.</span>
+                <span class="en">System built from scratch to automatically detect cyberattacks in a medical laboratory and raise an alert in under a minute, meeting the legal obligations around healthcare data protection.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Chaîne IDS/SIEM Suricata + Wazuh/OpenSearch, double capteur réseau (pare-feu + sonde Debian promiscuous pour le trafic est-ouest), 17 règles personnalisées, 10 vecteurs d'attaque rejoués et détectés, 32 475 événements corrélés.</span>
@@ -1136,8 +1285,8 @@
                 <span class="pill">EBIOS RM</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">A protégé l'annuaire numérique d'un laboratoire médical contre les cyberattaquants, de l'audit initial jusqu'à la contre-mesure automatique se déclenchant en temps réel.</span>
-                <span class="en">Secured a medical laboratory's digital directory against attackers, from the initial audit through to an automated countermeasure firing in real time.</span>
+                <span class="fr">Sécurisation de l'annuaire numérique d'un laboratoire médical, de l'audit initial jusqu'à une contre-mesure automatique qui se déclenche en temps réel face à l'attaque.</span>
+                <span class="en">End-to-end security of a medical laboratory's digital directory, from the initial audit through to an automated countermeasure firing in real time against the attack.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Chaîne EBIOS RM 5 ateliers → audit PingCastle 65/100 + Purple Knight 18 IOEs → Sysmon/Wazuh → 4 attaques AD réelles (Kerberoasting, AS-REP Roasting, DCSync, Golden Ticket) détectées → réponse SOAR confinant un DCSync en cours. PRI/PCI + PSSI.</span>
@@ -1165,8 +1314,8 @@
             <span class="en">Looking for a work-study apprenticeship</span>
         </h2>
         <p class="contact-text">
-            <span class="fr">Inscrit à l'IPI en <strong>Mastère professionnel Infra &amp; Cloud Xpert</strong> : Expert en architectures systèmes, réseaux et sécurité informatique. Je recherche l'entreprise qui m'accueillera en alternance, sur Toulouse et sa région. Disponible pour échanger sur vos besoins ou répondre à vos questions sur les dossiers présentés ci-dessus.</span>
-            <span class="en">Enrolled at IPI in a <strong>Professional Master's in Infrastructure &amp; Cloud</strong>: Expert in systems architecture, networking and information security. I am looking for the company that will host me under a work-study contract, in the Toulouse area of France. Happy to discuss your needs or answer any questions about the work presented above.</span>
+            <span class="fr">Inscrit à l'IPI en <strong>Mastère professionnel Infra &amp; Cloud Xpert</strong> : Expert en architectures systèmes, réseaux et sécurité informatique. Je recherche l'entreprise qui m'accueillera en alternance, sur Toulouse et sa région.<br><strong>Rythme :</strong> 3 semaines en entreprise, 1 semaine à l'école. <strong>Début :</strong> novembre 2026. Disponible pour échanger sur vos besoins ou répondre à vos questions sur les dossiers ci-dessus.</span>
+            <span class="en">Enrolled at IPI in a <strong>Professional Master's in Infrastructure &amp; Cloud</strong>: Expert in systems architecture, networking and information security. I am looking for the company that will host me under a work-study contract, in the Toulouse area of France.<br><strong>Schedule:</strong> 3 weeks in-company, 1 week at school. <strong>Starting:</strong> November 2026. Happy to discuss your needs or answer any questions about the work above.</span>
         </p>
 
         <a class="contact-cv" href="cv/CV_Sebastien_GUERRERO.pdf" target="_blank" rel="noopener">
