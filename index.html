@@ -35,6 +35,8 @@
             --sky:      #0EA5E9;
             --green:    #059669;
             --amber:    #D97706;
+            --violet:   #7C3AED;
+            --red:      #DC2626;
             --slate-900:#0F172A;
             --slate-700:#334155;
             --slate-600:#475569;
@@ -230,13 +232,21 @@
             gap: 22px 26px;
         }
 
+        .skill-cat { --cat: var(--slate-600); }
+        .skill-cat--net    { --cat: var(--blue); }
+        .skill-cat--perim  { --cat: var(--sky); }
+        .skill-cat--auth   { --cat: var(--violet); }
+        .skill-cat--detect { --cat: var(--green); }
+        .skill-cat--gov    { --cat: var(--amber); }
+        .skill-cat--off    { --cat: var(--red); }
+
         .skill-cat-title {
             font-size: 12.5px;
             font-weight: 700;
-            color: var(--navy);
+            color: var(--cat);
             margin-bottom: 10px;
             padding-bottom: 7px;
-            border-bottom: 1px solid var(--slate-200);
+            border-bottom: 2px solid color-mix(in srgb, var(--cat) 32%, transparent);
         }
 
         .skill-tags {
@@ -248,11 +258,11 @@
         .skill-tag {
             font-family: var(--mono);
             font-size: 10.5px;
-            background: var(--bg);
-            color: var(--slate-700);
+            background: color-mix(in srgb, var(--cat) 9%, white);
+            color: var(--cat);
             padding: 3px 8px;
             border-radius: 4px;
-            border: 1px solid var(--slate-200);
+            border: 1px solid color-mix(in srgb, var(--cat) 24%, transparent);
         }
 
         /* ── INTRO NOTE ── */
@@ -302,8 +312,9 @@
         }
 
         .contact-inner {
-            max-width: 900px;
+            max-width: 640px;
             margin: 0 auto;
+            text-align: left;
         }
 
         .contact-eyebrow {
@@ -333,8 +344,7 @@
             font-size: 14px;
             color: var(--slate-600);
             line-height: 1.7;
-            max-width: 640px;
-            margin-bottom: 26px;
+            margin: 0 0 26px;
         }
 
         .contact-cv {
@@ -363,6 +373,7 @@
             gap: 18px 28px;
             border-top: 1px solid var(--slate-200);
             padding-top: 26px;
+            text-align: left;
         }
 
         .contact-item {
@@ -805,7 +816,7 @@
     <div class="skills-inner">
         <div class="skills-eyebrow"><span class="fr">Domaines de compétences</span><span class="en">Areas of expertise</span></div>
         <div class="skills-grid">
-            <div class="skill-cat">
+            <div class="skill-cat skill-cat--net">
                 <div class="skill-cat-title"><span class="fr">Réseau &amp; Infrastructure</span><span class="en">Networking &amp; Infrastructure</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">VLAN / 802.1Q</span>
@@ -816,7 +827,7 @@
                     <span class="skill-tag">Hyper-V / VMware</span>
                 </div>
             </div>
-            <div class="skill-cat">
+            <div class="skill-cat skill-cat--perim">
                 <div class="skill-cat-title"><span class="fr">Sécurité périmétrique</span><span class="en">Perimeter Security</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">pfSense / OPNsense</span>
@@ -827,7 +838,7 @@
                     <span class="skill-tag">Haute dispo (CARP)</span>
                 </div>
             </div>
-            <div class="skill-cat">
+            <div class="skill-cat skill-cat--auth">
                 <div class="skill-cat-title"><span class="fr">Authentification &amp; Accès</span><span class="en">Authentication &amp; Access</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">RADIUS / 802.1X</span>
@@ -837,7 +848,7 @@
                     <span class="skill-tag">Tiering AD</span>
                 </div>
             </div>
-            <div class="skill-cat">
+            <div class="skill-cat skill-cat--detect">
                 <div class="skill-cat-title"><span class="fr">Détection &amp; Réponse</span><span class="en">Detection &amp; Response</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">SIEM (Wazuh)</span>
@@ -848,7 +859,7 @@
                     <span class="skill-tag">MITRE ATT&amp;CK</span>
                 </div>
             </div>
-            <div class="skill-cat">
+            <div class="skill-cat skill-cat--gov">
                 <div class="skill-cat-title"><span class="fr">Gouvernance &amp; Méthode</span><span class="en">Governance &amp; Method</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">EBIOS Risk Manager</span>
@@ -858,8 +869,8 @@
                     <span class="skill-tag">Référentiel ANSSI</span>
                 </div>
             </div>
-            <div class="skill-cat">
-                <div class="skill-cat-title"><span class="fr">Offensif (test &amp; validation)</span><span class="en">Offensive (testing)</span></div>
+            <div class="skill-cat skill-cat--off">
+                <div class="skill-cat-title"><span class="fr">Audit &amp; test offensif (validation par l'attaque)</span><span class="en">Offensive audit &amp; testing (attack-based validation)</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">Kali Linux</span>
                     <span class="skill-tag">Impacket</span>
@@ -1314,8 +1325,8 @@
             <span class="en">Looking for a work-study apprenticeship</span>
         </h2>
         <p class="contact-text">
-            <span class="fr">Inscrit à l'IPI en <strong>Mastère professionnel Infra &amp; Cloud Xpert</strong> : Expert en architectures systèmes, réseaux et sécurité informatique. Je recherche l'entreprise qui m'accueillera en alternance, sur Toulouse et sa région.<br><strong>Rythme :</strong> 3 semaines en entreprise, 1 semaine à l'école. <strong>Début :</strong> novembre 2026. Disponible pour échanger sur vos besoins ou répondre à vos questions sur les dossiers ci-dessus.</span>
-            <span class="en">Enrolled at IPI in a <strong>Professional Master's in Infrastructure &amp; Cloud</strong>: Expert in systems architecture, networking and information security. I am looking for the company that will host me under a work-study contract, in the Toulouse area of France.<br><strong>Schedule:</strong> 3 weeks in-company, 1 week at school. <strong>Starting:</strong> November 2026. Happy to discuss your needs or answer any questions about the work above.</span>
+            <span class="fr">Inscrit à l'IPI en <strong>Mastère professionnel Infra &amp; Cloud Xpert</strong> : Expert en architectures systèmes, réseaux et sécurité informatique. Je recherche l'entreprise qui m'accueillera en alternance, sur Toulouse et sa région.<br><strong>Rythme :</strong> 3 semaines en entreprise, 1 semaine à l'école.<br><strong>Début :</strong> novembre 2026.<br>Disponible pour échanger sur vos besoins ou répondre à vos questions sur les dossiers ci-dessus.</span>
+            <span class="en">Enrolled at IPI in a <strong>Professional Master's in Infrastructure &amp; Cloud</strong>: Expert in systems architecture, networking and information security. I am looking for the company that will host me under a work-study contract, in the Toulouse area of France.<br><strong>Schedule:</strong> 3 weeks in-company, 1 week at school.<br><strong>Starting:</strong> November 2026.<br>Happy to discuss your needs or answer any questions about the work above.</span>
         </p>
 
         <a class="contact-cv" href="cv/CV_Sebastien_GUERRERO.pdf" target="_blank" rel="noopener">
