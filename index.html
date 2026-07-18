@@ -513,8 +513,9 @@
             transition: border-color 0.2s;
         }
 
-        .tl-dot.advanced     { border-color: var(--green); background: var(--green); box-shadow: 0 0 0 3px #D1FAE5; }
+        .tl-dot.beginner     { border-color: var(--green); background: var(--green); box-shadow: 0 0 0 3px #D1FAE5; }
         .tl-dot.intermediate { border-color: var(--amber); background: var(--amber); box-shadow: 0 0 0 3px #FEF3C7; }
+        .tl-dot.advanced     { border-color: var(--red); background: var(--red); box-shadow: 0 0 0 3px #FEE2E2; }
 
         .tl-num {
             font-family: var(--mono);
@@ -583,8 +584,9 @@
             margin-top: 2px;
         }
 
-        .level-badge.advanced     { background: #D1FAE5; color: #065F46; }
+        .level-badge.beginner     { background: #D1FAE5; color: #065F46; }
         .level-badge.intermediate { background: #FEF3C7; color: #78350F; }
+        .level-badge.advanced     { background: #FEE2E2; color: #991B1B; }
 
         /* Stack pills */
         .stack-pills {
@@ -680,8 +682,9 @@
             border-radius: 50%;
         }
 
-        .legend-dot.advanced     { background: var(--green); }
+        .legend-dot.beginner     { background: var(--green); }
         .legend-dot.intermediate { background: var(--amber); }
+        .legend-dot.advanced     { background: var(--red); }
 
         /* ── FOOTER ── */
         footer {
@@ -727,11 +730,11 @@
             .intro-inner { padding: 14px 16px; }
             .intro-text { font-size: 13px; }
 
-            /* Stats : grille 2x2 au lieu d'un flex qui casse */
+            /* Stats : 3 colonnes (3 stats depuis retrait du niveau final) */
             .stats-inner {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 18px 12px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px 10px;
             }
             .stat-value { font-size: 1.35rem; }
             .stat-label { font-size: 10px; }
@@ -804,10 +807,6 @@
             <div class="stat-value">30+</div>
             <div class="stat-label"><span class="fr">TECHNOLOGIES</span><span class="en">TECHNOLOGIES</span></div>
         </div>
-        <div class="stat">
-            <div class="stat-value"><span class="fr">Avancé</span><span class="en">Advanced</span></div>
-            <div class="stat-label"><span class="fr">NIVEAU FINAL</span><span class="en">FINAL LEVEL</span></div>
-        </div>
     </div>
 </div>
 
@@ -873,10 +872,16 @@
                 <div class="skill-cat-title"><span class="fr">Audit &amp; test offensif (validation par l'attaque)</span><span class="en">Offensive audit &amp; testing (attack-based validation)</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">Kali Linux</span>
+                    <span class="skill-tag">Nmap</span>
                     <span class="skill-tag">Impacket</span>
                     <span class="skill-tag">Mimikatz</span>
-                    <span class="skill-tag">Nmap</span>
+                    <span class="skill-tag">Rubeus</span>
                     <span class="skill-tag">PingCastle</span>
+                    <span class="skill-tag">Pentesting</span>
+                    <span class="skill-tag">Kerberoasting</span>
+                    <span class="skill-tag">AS-REP Roasting</span>
+                    <span class="skill-tag">Golden Ticket</span>
+                    <span class="skill-tag">DCSync</span>
                 </div>
             </div>
         </div>
@@ -919,6 +924,7 @@
 
 <!-- ── LÉGENDE ── -->
 <div class="legend" aria-hidden="true">
+    <div class="legend-item"><div class="legend-dot beginner"></div><span class="fr">Débutant</span><span class="en">Beginner</span></div>
     <div class="legend-item"><div class="legend-dot intermediate"></div><span class="fr">Intermédiaire</span><span class="en">Intermediate</span></div>
     <div class="legend-item"><div class="legend-dot advanced"></div><span class="fr">Avancé</span><span class="en">Advanced</span></div>
 </div>
@@ -929,7 +935,7 @@
     <!-- PR01 -->
     <div class="project-row">
         <div class="tl-node" aria-hidden="true">
-            <div class="tl-dot intermediate"></div>
+            <div class="tl-dot beginner"></div>
             <div class="tl-num">01</div>
             <div class="tl-date">10/25</div>
         </div>
@@ -945,7 +951,7 @@
                         <span class="en">ADRAF · Training center · 200 workstations</span>
                     </div>
                 </div>
-                <span class="level-badge intermediate"><span class="fr">Intermédiaire</span><span class="en">Intermediate</span></span>
+                <span class="level-badge beginner"><span class="fr">Débutant</span><span class="en">Beginner</span></span>
             </div>
             <div class="stack-pills">
                 <span class="pill">Cisco IOS</span>
@@ -978,7 +984,7 @@
     <!-- PR02 -->
     <div class="project-row">
         <div class="tl-node" aria-hidden="true">
-            <div class="tl-dot intermediate"></div>
+            <div class="tl-dot beginner"></div>
             <div class="tl-num">02</div>
             <div class="tl-date">11/25</div>
         </div>
@@ -994,7 +1000,7 @@
                         <span class="en">50-user SME · Enabling remote work</span>
                     </div>
                 </div>
-                <span class="level-badge intermediate"><span class="fr">Intermédiaire</span><span class="en">Intermediate</span></span>
+                <span class="level-badge beginner"><span class="fr">Débutant</span><span class="en">Beginner</span></span>
             </div>
             <div class="stack-pills">
                 <span class="pill">pfSense</span>
@@ -1026,7 +1032,7 @@
     <!-- PR03 -->
     <div class="project-row">
         <div class="tl-node" aria-hidden="true">
-            <div class="tl-dot advanced"></div>
+            <div class="tl-dot beginner"></div>
             <div class="tl-num">03</div>
             <div class="tl-date">01/26</div>
         </div>
@@ -1042,7 +1048,7 @@
                         <span class="en">ADRAR Digital Hub · Internet-facing web services</span>
                     </div>
                 </div>
-                <span class="level-badge advanced"><span class="fr">Avancé</span><span class="en">Advanced</span></span>
+                <span class="level-badge beginner"><span class="fr">Débutant</span><span class="en">Beginner</span></span>
             </div>
             <div class="stack-pills">
                 <span class="pill">OPNsense</span>
@@ -1075,7 +1081,7 @@
     <!-- PR04 -->
     <div class="project-row">
         <div class="tl-node" aria-hidden="true">
-            <div class="tl-dot advanced"></div>
+            <div class="tl-dot intermediate"></div>
             <div class="tl-num">04</div>
             <div class="tl-date">01/26</div>
         </div>
@@ -1091,7 +1097,7 @@
                         <span class="en">ADRAR Training · Identity-based enterprise Wi-Fi</span>
                     </div>
                 </div>
-                <span class="level-badge advanced"><span class="fr">Avancé</span><span class="en">Advanced</span></span>
+                <span class="level-badge intermediate"><span class="fr">Intermédiaire</span><span class="en">Intermediate</span></span>
             </div>
             <div class="stack-pills">
                 <span class="pill">NPS/RADIUS</span>
@@ -1123,7 +1129,7 @@
     <!-- PR05 -->
     <div class="project-row">
         <div class="tl-node" aria-hidden="true">
-            <div class="tl-dot advanced"></div>
+            <div class="tl-dot intermediate"></div>
             <div class="tl-num">05</div>
             <div class="tl-date">02/26</div>
         </div>
@@ -1139,7 +1145,7 @@
                         <span class="en">ADRAR-FORM · HA cluster + Kerberos SSO + GDPR compliance</span>
                     </div>
                 </div>
-                <span class="level-badge advanced"><span class="fr">Avancé</span><span class="en">Advanced</span></span>
+                <span class="level-badge intermediate"><span class="fr">Intermédiaire</span><span class="en">Intermediate</span></span>
             </div>
             <div class="stack-pills">
                 <span class="pill">OPNsense CARP</span>
