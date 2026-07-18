@@ -232,6 +232,9 @@
             gap: 22px 26px;
         }
 
+        /* 7 catégories : centre la dernière si seule sur sa ligne (grille 3 col) */
+        .skills-grid > .skill-cat:last-child:nth-child(3n - 2) { grid-column: 2; }
+
         .skill-cat { --cat: var(--slate-600); }
         .skill-cat--net    { --cat: var(--blue); }
         .skill-cat--perim  { --cat: var(--sky); }
@@ -239,6 +242,7 @@
         .skill-cat--detect { --cat: var(--green); }
         .skill-cat--gov    { --cat: var(--amber); }
         .skill-cat--off    { --cat: var(--red); }
+        .skill-cat--sys    { --cat: var(--slate-600); }
 
         .skill-cat-title {
             font-size: 12.5px;
@@ -348,7 +352,8 @@
         }
 
         .contact-cv {
-            display: inline-flex;
+            display: flex;
+            width: fit-content;
             align-items: center;
             gap: 8px;
             background: var(--navy);
@@ -359,7 +364,7 @@
             font-weight: 600;
             text-decoration: none;
             transition: transform 0.18s, box-shadow 0.18s;
-            margin-bottom: 30px;
+            margin: 0 auto 30px;
         }
 
         .contact-cv:hover {
@@ -708,6 +713,7 @@
         /* ── RESPONSIVE ── */
         @media (max-width: 820px) {
             .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .skills-grid > .skill-cat:last-child:nth-child(3n - 2) { grid-column: auto; }
         }
 
         @media (max-width: 780px) {
@@ -760,6 +766,51 @@
 
         @media (prefers-reduced-motion: reduce) {
             .project-card, .header-link { transition: none; }
+            .float-cta-dot { animation: none; }
+        }
+
+        .float-cta {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 90;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--blue);
+            color: #fff;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(29,78,216,0.38);
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+
+        .float-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(29,78,216,0.46);
+        }
+
+        .float-cta-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4ADE80;
+            border: 2px solid #fff;
+            flex-shrink: 0;
+            animation: cta-pulse 1.6s infinite;
+        }
+
+        @keyframes cta-pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.85); }
+            70%  { box-shadow: 0 0 0 12px rgba(74,222,128,0); }
+            100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+        }
+
+        @media (max-width: 580px) {
+            .float-cta { right: 12px; bottom: 12px; padding: 9px 14px; font-size: 12px; }
         }
     </style>
 </head>
@@ -823,7 +874,16 @@
                     <span class="skill-tag">LACP</span>
                     <span class="skill-tag">Active Directory</span>
                     <span class="skill-tag">DNS / DHCP</span>
-                    <span class="skill-tag">Hyper-V / VMware</span>
+                </div>
+            </div>
+            <div class="skill-cat skill-cat--sys">
+                <div class="skill-cat-title"><span class="fr">Systèmes &amp; Virtualisation</span><span class="en">Systems &amp; Virtualization</span></div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Windows Server</span>
+                    <span class="skill-tag">Linux (Debian)</span>
+                    <span class="skill-tag">Hyper-V</span>
+                    <span class="skill-tag">VMware</span>
+                    <span class="skill-tag">GPO</span>
                 </div>
             </div>
             <div class="skill-cat skill-cat--perim">
@@ -1384,6 +1444,11 @@
 </section>
 
 <!-- ── FOOTER ── -->
+<a class="float-cta" href="#contact" aria-label="En recherche d'alternance">
+    <span class="float-cta-dot" aria-hidden="true"></span>
+    <span class="fr">En recherche d'alternance</span><span class="en">Open to work-study</span>
+</a>
+
 <footer>
     <p>Sébastien Guerrero &nbsp;·&nbsp; <a href="mailto:sebastien.guerrero31@gmail.com">sebastien.guerrero31@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/sebastienguerrero" target="_blank" rel="noopener">LinkedIn</a></p>
     <p class="footer-mono">
