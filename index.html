@@ -121,6 +121,21 @@
 
         .lang-btn:hover:not(.active) { color: white; }
 
+        .hero-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 22px;
+            border: 3px solid rgba(255,255,255,0.9);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+        }
+
+        @media (max-width: 580px) {
+            .hero-photo { width: 96px; height: 96px; margin-bottom: 16px; }
+        }
+
         .eyebrow {
             font-family: var(--mono);
             font-size: 11px;
@@ -859,6 +874,7 @@
         <button class="lang-btn"        id="btn-en" onclick="setLang('en')">EN</button>
     </div>
     <div class="header-inner">
+        <img class="hero-photo" src="photo_sebastien.jpg" alt="Portrait de Sébastien Guerrero" width="120" height="120">
         <div class="eyebrow">
             <span class="fr">Portfolio · Cybersécurité · Systèmes · Réseaux</span>
             <span class="en">Portfolio · Cybersecurity · Systems · Networking</span>
