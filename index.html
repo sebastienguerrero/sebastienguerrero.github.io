@@ -779,17 +779,17 @@
             background: var(--blue);
             color: #fff;
             text-decoration: none;
-            padding: 11px 18px;
+            padding: 12px 20px;
             border-radius: 999px;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
-            box-shadow: 0 6px 20px rgba(29,78,216,0.38);
+            box-shadow: 0 6px 22px rgba(29,78,216,0.42);
             transition: transform 0.18s, box-shadow 0.18s;
         }
 
         .float-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 26px rgba(29,78,216,0.46);
+            box-shadow: 0 10px 28px rgba(29,78,216,0.5);
         }
 
         .float-cta-dot {
@@ -809,7 +809,7 @@
         }
 
         @media (max-width: 580px) {
-            .float-cta { right: 12px; bottom: 12px; padding: 9px 14px; font-size: 12px; }
+            .float-cta { right: 12px; bottom: 14px; padding: 10px 16px; font-size: 13px; }
         }
     </style>
 </head>
@@ -823,8 +823,8 @@
     </div>
     <div class="header-inner">
         <div class="eyebrow">
-            <span class="fr">Portfolio · Cybersécurité &amp; Réseaux</span>
-            <span class="en">Portfolio · Cybersecurity &amp; Networking</span>
+            <span class="fr">Portfolio · Cybersécurité · Systèmes · Réseaux</span>
+            <span class="en">Portfolio · Cybersecurity · Systems · Networking</span>
         </div>
         <h1>Sébastien Guerrero</h1>
         <p class="subtitle">
@@ -934,7 +934,7 @@
                 </div>
             </div>
             <div class="skill-cat skill-cat--off">
-                <div class="skill-cat-title"><span class="fr">Audit &amp; pentest (validation par l'attaque)</span><span class="en">Audit &amp; pentesting (attack-based validation)</span></div>
+                <div class="skill-cat-title"><span class="fr">Audit &amp; Pentesting (validation par test de pénétration)</span><span class="en">Audit &amp; Pentesting (penetration-testing validation)</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">Kali Linux</span>
                     <span class="skill-tag">Nmap</span>
@@ -960,8 +960,8 @@
             <span class="en">About this portfolio</span>
         </div>
         <p class="intro-text">
-            <span class="fr">Les projets sont présentés dans leur ordre chronologique de réalisation. Les premiers dossiers posent les fondamentaux réseau et l'architecture. Les suivants introduisent le filtrage périmétrique, l'authentification centralisée et la haute disponibilité. Les derniers intègrent l'analyse de risque formelle, la détection d'intrusion et la réponse automatisée à incident, avec des attaques réellement exécutées puis détectées en laboratoire.</span>
-            <span class="en">Projects are presented in the chronological order in which they were completed. The early projects establish networking fundamentals and architecture. The following ones introduce perimeter filtering, centralised authentication and high availability. The latest ones bring in formal risk analysis, intrusion detection and automated incident response, with attacks actually executed and then detected in a lab environment.</span>
+            <span class="fr">Les projets sont présentés dans leur ordre chronologique de réalisation. Les premiers dossiers posent les fondamentaux de l'architecture systèmes et réseau d'entreprise. Les suivants introduisent le filtrage périmétrique, l'authentification centralisée et la haute disponibilité. Les derniers intègrent l'analyse de risque formelle, la détection d'intrusion et la réponse automatisée à incident, avec des attaques réellement exécutées puis détectées en laboratoire.</span>
+            <span class="en">Projects are presented in the chronological order in which they were completed. The early projects establish the fundamentals of enterprise systems and network architecture. The following ones introduce perimeter filtering, centralised authentication and high availability. The latest ones bring in formal risk analysis, intrusion detection and automated incident response, with attacks actually executed and then detected in a lab environment.</span>
         </p>
         <p class="intro-text">
             <span class="fr">La méthodologie, la profondeur technique et la qualité de restitution suivent la même courbe. <strong>Cette progression est délibérément visible : les projets les plus récents sont les plus représentatifs de mon niveau actuel.</strong></span>
@@ -1027,8 +1027,8 @@
                 <span class="pill">Hyper-V</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">Refonte complète du réseau d'un centre de formation de 200 postes : d'un réseau à plat où chacun voyait tout, à une infrastructure cloisonnée par métier, avec serveurs redondés et Wi-Fi sécurisé.</span>
-                <span class="en">Complete network redesign for a 200-workstation training center: from a flat network where everyone could see everything, to an infrastructure segmented by department, with redundant servers and secured Wi-Fi.</span>
+                <span class="fr">Refonte complète du réseau d'un centre de formation de 200 postes : d'un réseau à plat où tous les équipements communiquaient sans cloisonnement, vers une infrastructure segmentée par service, avec serveurs redondés et Wi-Fi sécurisé.</span>
+                <span class="en">Complete network redesign for a 200-workstation training center: from a flat network where every device could communicate without restriction, to an infrastructure segmented by department, with redundant servers and secured Wi-Fi.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Segmentation 5 VLANs, ROAS Cisco 1921 avec ACL deny-by-default par sous-interface, LACP 6 liens vers l'hôte Hyper-V, AD DS répliqué avec failover DHCP et Apache2 en TLS sur Debian 13.</span>
@@ -1075,8 +1075,8 @@
                 <span class="pill">NAT</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">Accès distant sécurisé permettant aux employés de travailler depuis chez eux, sans ouvrir de brèche dans le réseau de l'entreprise.</span>
-                <span class="en">Secure remote access letting employees work from home without opening a breach into the company network.</span>
+                <span class="fr">Accès distant sécurisé permettant aux employés de travailler depuis chez eux, sans exposer le réseau de l'entreprise.</span>
+                <span class="en">Secure remote access letting employees work from home without exposing the company network.</span>
             </div>
             <div class="card-content content-detail">
                 <span class="fr">Déploiement VPN SSL OpenVPN sur pfSense avec authentification par certificat PKI et LDAPS vers AD, segmentation réseau dédiée en /30 par client et filtrage strict full tunnel. Mapping MITRE ATT&amp;CK T1133/T1078.</span>
@@ -1268,7 +1268,7 @@
                 <span class="pill">RBAC LDAP</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">Système d'alerte capable de détecter une panne avant qu'elle ne devienne un incident, validé par sept pannes provoquées volontairement pour le prouver.</span>
+                <span class="fr">Système d'alerte capable de détecter une panne avant qu'elle ne devienne un incident, validé par sept pannes provoquées volontairement.</span>
                 <span class="en">Alerting system able to catch a failure before it turns into an incident, validated through seven deliberately triggered failures.</span>
             </div>
             <div class="card-content content-detail">
@@ -1316,7 +1316,7 @@
                 <span class="pill">DVWA</span>
             </div>
             <div class="card-content content-simple">
-                <span class="fr">Système de détection automatique des cyberattaques dans un laboratoire médical, conçu de A à Z, capable d'alerter en moins d'une minute dans le respect des obligations légales sur les données de santé.</span>
+                <span class="fr">Système de détection automatique des cyberattaques dans un laboratoire médical, conçu intégralement, capable d'alerter en moins d'une minute dans le respect des obligations légales sur les données de santé.</span>
                 <span class="en">System built from scratch to automatically detect cyberattacks in a medical laboratory and raise an alert in under a minute, meeting the legal obligations around healthcare data protection.</span>
             </div>
             <div class="card-content content-detail">
