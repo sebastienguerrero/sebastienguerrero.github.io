@@ -774,23 +774,45 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 90;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
             display: inline-flex;
             align-items: center;
-            gap: 9px;
+            justify-content: center;
             background: #059669;
             color: #fff;
             text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: 700;
             box-shadow: 0 6px 22px rgba(5,150,105,0.42);
             transition: transform 0.18s;
             animation: cta-pulse 1.8s infinite;
         }
 
+        .float-cta-ico {
+            width: 26px;
+            height: 26px;
+        }
+
+        .float-cta-tip {
+            position: absolute;
+            left: 70px;
+            white-space: nowrap;
+            background: var(--slate-900);
+            color: #fff;
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.18s;
+            box-shadow: 0 4px 14px rgba(15,23,42,0.22);
+        }
+
+        .float-cta:hover .float-cta-tip { opacity: 1; }
+
         .float-cta:hover {
-            transform: translateY(-50%) translateX(4px);
+            transform: translateY(-50%) scale(1.07);
         }
 
         @keyframes cta-pulse {
@@ -800,7 +822,7 @@
         }
 
         @media (max-width: 580px) {
-            .float-cta { left: 12px; top: auto; bottom: 14px; transform: none; padding: 10px 16px; font-size: 13px; }
+            .float-cta { left: 12px; top: auto; bottom: 14px; transform: none; }
             .float-cta:hover { transform: none; }
         }
     </style>
@@ -1442,7 +1464,8 @@
 
 <!-- ── FOOTER ── -->
 <a class="float-cta" href="#contact" aria-label="En recherche d'alternance">
-    <span class="fr">En recherche d'alternance</span><span class="en">Open to work-study</span>
+    <svg class="float-cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+    <span class="float-cta-tip"><span class="fr">En recherche d'alternance</span><span class="en">Open to work-study</span></span>
 </a>
 
 <footer>
