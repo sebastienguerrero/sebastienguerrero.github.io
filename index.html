@@ -37,6 +37,7 @@
             --amber:    #D97706;
             --violet:   #7C3AED;
             --red:      #DC2626;
+            --teal:     #0D9488;
             --slate-900:#0F172A;
             --slate-700:#334155;
             --slate-600:#475569;
@@ -212,7 +213,7 @@
         }
 
         .skills-inner {
-            max-width: 900px;
+            max-width: 1040px;
             margin: 0 auto;
         }
 
@@ -228,18 +229,16 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px 26px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px 18px;
         }
-
-        /* 7 catégories : centre la dernière si seule sur sa ligne (grille 3 col) */
-        .skills-grid > .skill-cat:last-child:nth-child(3n - 2) { grid-column: 2; }
 
         .skill-cat { --cat: var(--slate-600); }
         .skill-cat--net    { --cat: var(--blue); }
         .skill-cat--perim  { --cat: var(--sky); }
         .skill-cat--auth   { --cat: var(--violet); }
         .skill-cat--detect { --cat: var(--green); }
+        .skill-cat--resp   { --cat: var(--teal); }
         .skill-cat--gov    { --cat: var(--amber); }
         .skill-cat--off    { --cat: var(--red); }
         .skill-cat--sys    { --cat: var(--slate-600); }
@@ -713,7 +712,6 @@
         /* ── RESPONSIVE ── */
         @media (max-width: 820px) {
             .skills-grid { grid-template-columns: repeat(2, 1fr); }
-            .skills-grid > .skill-cat:last-child:nth-child(3n - 2) { grid-column: auto; }
         }
 
         @media (max-width: 780px) {
@@ -872,7 +870,6 @@
                     <span class="skill-tag">VLAN / 802.1Q</span>
                     <span class="skill-tag">Routage &amp; ACL</span>
                     <span class="skill-tag">LACP</span>
-                    <span class="skill-tag">Active Directory</span>
                     <span class="skill-tag">DNS / DHCP</span>
                 </div>
             </div>
@@ -900,6 +897,7 @@
             <div class="skill-cat skill-cat--auth">
                 <div class="skill-cat-title"><span class="fr">Authentification &amp; Accès</span><span class="en">Authentication &amp; Access</span></div>
                 <div class="skill-tags">
+                    <span class="skill-tag">Active Directory</span>
                     <span class="skill-tag">RADIUS / 802.1X</span>
                     <span class="skill-tag">Kerberos SSO</span>
                     <span class="skill-tag">LDAPS</span>
@@ -908,14 +906,20 @@
                 </div>
             </div>
             <div class="skill-cat skill-cat--detect">
-                <div class="skill-cat-title"><span class="fr">Détection &amp; Réponse</span><span class="en">Detection &amp; Response</span></div>
+                <div class="skill-cat-title"><span class="fr">Détection (SOC)</span><span class="en">Detection (SOC)</span></div>
                 <div class="skill-tags">
                     <span class="skill-tag">SIEM (Wazuh)</span>
                     <span class="skill-tag">Suricata IDS/IPS</span>
                     <span class="skill-tag">Sysmon</span>
-                    <span class="skill-tag">SOAR</span>
-                    <span class="skill-tag">Supervision (Zabbix)</span>
                     <span class="skill-tag">MITRE ATT&amp;CK</span>
+                </div>
+            </div>
+            <div class="skill-cat skill-cat--resp">
+                <div class="skill-cat-title"><span class="fr">Réponse &amp; Automatisation</span><span class="en">Response &amp; Automation</span></div>
+                <div class="skill-tags">
+                    <span class="skill-tag">SOAR</span>
+                    <span class="skill-tag">EDR</span>
+                    <span class="skill-tag">Supervision (Zabbix)</span>
                 </div>
             </div>
             <div class="skill-cat skill-cat--gov">
@@ -1494,6 +1498,22 @@
     (function() {
         var nav = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
         if (nav.indexOf('fr') !== 0) { setLang('en'); }
+    })();
+
+    // Scroll fluide sur les liens d'ancre (bouton alternance, header)
+    (function() {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var links = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function(e) {
+                var id = this.getAttribute('href');
+                if (id.length < 2) { return; }
+                var target = document.querySelector(id);
+                if (!target) { return; }
+                e.preventDefault();
+                target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+            });
+        }
     })();
 </script>
 
