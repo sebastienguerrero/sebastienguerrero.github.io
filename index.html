@@ -286,6 +286,87 @@
             border: 1px solid color-mix(in srgb, var(--cat) 24%, transparent);
         }
 
+        /* ── EXPÉRIENCE ── */
+        .xp {
+            max-width: 900px;
+            margin: 44px auto -6px;
+            padding: 0 24px;
+        }
+
+        .xp-eyebrow {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--sky);
+            margin-bottom: 12px;
+        }
+
+        .xp-card {
+            background: white;
+            border: 1px solid var(--slate-200);
+            border-left: 3px solid var(--sky);
+            border-radius: 10px;
+            padding: 18px 22px;
+        }
+
+        .xp-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px 14px;
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .xp-role {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--slate-900);
+        }
+
+        .xp-company {
+            font-size: 13.5px;
+            color: var(--slate-600);
+        }
+
+        .xp-dates {
+            font-family: var(--mono);
+            font-size: 11.5px;
+            color: var(--slate-400);
+            margin-left: auto;
+        }
+
+        .xp-group { margin-bottom: 14px; }
+        .xp-group:last-child { margin-bottom: 0; }
+
+        .xp-group-title {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 6px;
+        }
+
+        .xp-list {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .xp-list li {
+            font-size: 13.5px;
+            color: var(--slate-600);
+            line-height: 1.65;
+            margin-bottom: 3px;
+        }
+
+        @media (max-width: 580px) {
+            .xp { margin-top: 32px; }
+            .xp-card { padding: 14px 16px; }
+            .xp-dates { margin-left: 0; }
+            .xp-list li { font-size: 13px; }
+        }
+
         /* ── INTRO NOTE ── */
         .intro-note {
             max-width: 900px;
@@ -1020,6 +1101,56 @@
             <span class="fr">La méthodologie, la profondeur technique et la qualité de restitution suivent la même courbe. <strong>Cette progression est délibérément visible : les projets les plus récents sont les plus représentatifs de mon niveau actuel.</strong></span>
             <span class="en">Methodology, technical depth and reporting quality follow the same curve. <strong>This progression is deliberately visible: the most recent projects best represent my current level.</strong></span>
         </p>
+    </div>
+</div>
+
+<!-- ── EXPÉRIENCE ── -->
+<div class="xp">
+    <div class="xp-card">
+        <h2 class="xp-eyebrow"><span class="fr">Expérience en entreprise</span><span class="en">Professional experience</span></h2>
+        <div class="xp-head">
+            <span class="xp-role"><span class="fr">Alternance en infogérance</span><span class="en">Apprenticeship in managed IT services</span></span>
+            <span class="xp-company">So Hexawin<span class="fr"> · Toulouse</span><span class="en"> · Toulouse, France</span></span>
+            <span class="xp-dates"><span class="fr">09/24 → 11/26</span><span class="en">09/24 → 11/26</span></span>
+        </div>
+
+        <div class="xp-group">
+            <h3 class="xp-group-title"><span class="fr">Autonomie &amp; relation client</span><span class="en">Autonomy &amp; client relations</span></h3>
+            <ul class="xp-list">
+                <li><span class="fr">Interventions en autonomie sur site chez les clients : diagnostic des incidents, résolution et validation du retour à la normale</span><span class="en">Independent on-site interventions at client premises: diagnosing incidents, resolving them and confirming the return to normal operation</span></li>
+                <li><span class="fr">Point direct en face à face avec les clients sur les incidents en cours, l'avancement du traitement et la résolution apportée</span><span class="en">Face-to-face updates with clients on ongoing incidents, how the work is progressing and how each issue was resolved</span></li>
+                <li><span class="fr">Support utilisateur, accompagnement et formation des utilisateurs</span><span class="en">User support, guidance and training</span></li>
+                <li><span class="fr">Rédaction de procédures et de documentation technique, échanges directs avec les prestataires externes</span><span class="en">Wrote procedures and technical documentation, and liaised directly with external providers</span></li>
+            </ul>
+        </div>
+
+        <div class="xp-group">
+            <h3 class="xp-group-title"><span class="fr">Infrastructure &amp; réseau</span><span class="en">Infrastructure &amp; networking</span></h3>
+            <ul class="xp-list">
+                <li><span class="fr">Migration de plusieurs cliniques toulousaines d'un pare-feu isolé par site vers un cluster Sophos sur chaque site, avec reconfiguration de l'ensemble des VPN prestataires</span><span class="en">Migrated several clinics in the Toulouse area from a standalone firewall per site to a Sophos cluster on each site, including the reconfiguration of every third-party VPN</span></li>
+                <li><span class="fr">Configuration de switchs et de pare-feu Sophos, maintien en condition opérationnelle des serveurs, NAS, switchs et pare-feu de l'ensemble du parc clients</span><span class="en">Configured switches and Sophos firewalls, and kept servers, NAS units, switches and firewalls running across the whole client base</span></li>
+                <li><span class="fr">Déploiement de serveurs, migration de machines virtuelles et préparation de clusters pour de nouvelles infrastructures (VMware vSphere / ESXi, Hyper-V, stockage partagé)</span><span class="en">Deployed servers, migrated virtual machines and prepared clusters for new infrastructures (VMware vSphere / ESXi, Hyper-V, shared storage)</span></li>
+                <li><span class="fr">Déploiement de plus de 100 postes de travail répartis sur plusieurs sites d'un même client</span><span class="en">Rolled out over 100 workstations across multiple sites for a single client</span></li>
+            </ul>
+        </div>
+
+        <div class="xp-group">
+            <h3 class="xp-group-title"><span class="fr">Systèmes &amp; environnement Microsoft</span><span class="en">Systems &amp; Microsoft environment</span></h3>
+            <ul class="xp-list">
+                <li><span class="fr">Administration Active Directory (comptes, GPO, unités d'organisation) et Windows Server (rôles, DNS/DHCP, correctifs), migration et création de domaines</span><span class="en">Active Directory administration (accounts, GPOs, organisational units) and Windows Server (roles, DNS/DHCP, patching), plus domain migration and creation</span></li>
+                <li><span class="fr">Migration d'un serveur de fichiers local vers SharePoint, gestion des comptes et des licences Microsoft 365</span><span class="en">Migrated an on-premises file server to SharePoint, and handled Microsoft 365 accounts and licensing</span></li>
+                <li><span class="fr">Scripts PowerShell et automatisation des tâches récurrentes</span><span class="en">PowerShell scripting and automation of recurring tasks</span></li>
+            </ul>
+        </div>
+
+        <div class="xp-group">
+            <h3 class="xp-group-title"><span class="fr">Sécurité, sauvegarde &amp; supervision</span><span class="en">Security, backup &amp; monitoring</span></h3>
+            <ul class="xp-list">
+                <li><span class="fr">Gestion des sauvegardes sous Veeam, avec tests de restauration</span><span class="en">Managed Veeam backups, including restore testing</span></li>
+                <li><span class="fr">Déploiement d'antivirus et d'EDR, gestion des mises à jour et des correctifs de sécurité</span><span class="en">Deployed antivirus and EDR solutions, and managed security updates and patches</span></li>
+                <li><span class="fr">Mise en place de solutions de supervision chez des clients qui n'en disposaient pas, et de GLPI pour l'inventaire de parc</span><span class="en">Introduced monitoring solutions for clients that had none, along with GLPI for asset inventory</span></li>
+            </ul>
+        </div>
     </div>
 </div>
 
