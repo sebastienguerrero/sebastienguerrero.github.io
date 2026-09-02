@@ -442,6 +442,28 @@
             font-weight: 600;
         }
 
+        .contact-facts {
+            margin: 22px 0 26px;
+            border-left: 3px solid var(--sky);
+            padding-left: 14px;
+        }
+
+        .fact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 10px;
+            font-size: 13.5px;
+            line-height: 1.9;
+        }
+
+        .fact-key {
+            font-weight: 700;
+            color: var(--slate-900);
+            min-width: 74px;
+        }
+
+        .fact-val { color: var(--slate-600); }
+
         .contact-text {
             font-size: 14px;
             color: var(--slate-600);
@@ -1086,24 +1108,6 @@
     </div>
 </div>
 
-<!-- ── INTRO ── -->
-<div class="intro-note">
-    <div class="intro-inner">
-        <div class="intro-title">
-            <span class="fr">À propos de ce portfolio</span>
-            <span class="en">About this portfolio</span>
-        </div>
-        <p class="intro-text">
-            <span class="fr">Les projets sont présentés dans leur ordre chronologique de réalisation. Les premiers dossiers posent les fondamentaux de l'architecture systèmes et réseau d'entreprise. Les suivants introduisent le filtrage périmétrique, l'authentification centralisée et la haute disponibilité. Les derniers intègrent l'analyse de risque formelle, la détection d'intrusion et la réponse automatisée à incident, avec des attaques réellement exécutées puis détectées en laboratoire.</span>
-            <span class="en">Projects are presented in the chronological order in which they were completed. The early projects establish the fundamentals of enterprise systems and network architecture. The following ones introduce perimeter filtering, centralised authentication and high availability. The latest ones bring in formal risk analysis, intrusion detection and automated incident response, with attacks actually executed and then detected in a lab environment.</span>
-        </p>
-        <p class="intro-text">
-            <span class="fr">La méthodologie, la profondeur technique et la qualité de restitution suivent la même courbe. <strong>Cette progression est délibérément visible : les projets les plus récents sont les plus représentatifs de mon niveau actuel.</strong></span>
-            <span class="en">Methodology, technical depth and reporting quality follow the same curve. <strong>This progression is deliberately visible: the most recent projects best represent my current level.</strong></span>
-        </p>
-    </div>
-</div>
-
 <!-- ── EXPÉRIENCE ── -->
 <div class="xp">
     <div class="xp-card">
@@ -1151,6 +1155,24 @@
                 <li><span class="fr">Mise en place de solutions de supervision chez des clients qui n'en disposaient pas, et de GLPI pour l'inventaire de parc</span><span class="en">Introduced monitoring solutions for clients that had none, along with GLPI for asset inventory</span></li>
             </ul>
         </div>
+    </div>
+</div>
+
+<!-- ── INTRO ── -->
+<div class="intro-note">
+    <div class="intro-inner">
+        <div class="intro-title">
+            <span class="fr">À propos de ce portfolio</span>
+            <span class="en">About this portfolio</span>
+        </div>
+        <p class="intro-text">
+            <span class="fr">Les projets sont présentés dans leur ordre chronologique de réalisation. Les premiers dossiers posent les fondamentaux de l'architecture systèmes et réseau d'entreprise. Les suivants introduisent le filtrage périmétrique, l'authentification centralisée et la haute disponibilité. Les derniers intègrent l'analyse de risque formelle, la détection d'intrusion et la réponse automatisée à incident, avec des attaques réellement exécutées puis détectées en laboratoire.</span>
+            <span class="en">Projects are presented in the chronological order in which they were completed. The early projects establish the fundamentals of enterprise systems and network architecture. The following ones introduce perimeter filtering, centralised authentication and high availability. The latest ones bring in formal risk analysis, intrusion detection and automated incident response, with attacks actually executed and then detected in a lab environment.</span>
+        </p>
+        <p class="intro-text">
+            <span class="fr">La méthodologie, la profondeur technique et la qualité de restitution suivent la même courbe. <strong>Cette progression est délibérément visible : les projets les plus récents sont les plus représentatifs de mon niveau actuel.</strong></span>
+            <span class="en">Methodology, technical depth and reporting quality follow the same curve. <strong>This progression is deliberately visible: the most recent projects best represent my current level.</strong></span>
+        </p>
     </div>
 </div>
 
@@ -1579,9 +1601,26 @@
             <span class="en">Looking for a work-study apprenticeship</span>
         </h2>
         <p class="contact-text">
-            <span class="fr">Inscrit à l'IPI en <strong>Mastère professionnel Infra &amp; Cloud Xpert</strong>. Fort de mon expérience en infrastructure, systèmes et réseau, je veux monter en compétences sur le cloud, et c'est tout le sens de ce master. Je recherche l'entreprise qui m'accueillera en alternance sur Toulouse et sa région, idéalement là où le cloud fait partie du quotidien.<br><strong>Rythme :</strong> 3 semaines en entreprise, 1 semaine à l'école.<br><strong>Début :</strong> novembre 2026.<br>Disponible pour échanger sur vos besoins ou répondre à vos questions sur les dossiers ci-dessus.</span>
-            <span class="en">Enrolled at IPI in a <strong>Professional Master's in Infrastructure &amp; Cloud</strong>. Backed by my experience in infrastructure, systems and networking, I want to grow my cloud skills, which is exactly what this master is about. I am looking for a company to host me under a work-study contract in the Toulouse area, ideally one where cloud is part of the daily work.<br><strong>Schedule:</strong> 3 weeks in-company, 1 week at school.<br><strong>Starting:</strong> November 2026.<br>Happy to discuss your needs or answer any questions about the work above.</span>
+            <span class="fr">Inscrit à l'IPI en <strong>Mastère professionnel Infra &amp; Cloud Xpert</strong>.</span>
+            <span class="en">Enrolled at IPI in a <strong>Professional Master's in Infrastructure &amp; Cloud</strong>.</span>
         </p>
+        <p class="contact-text">
+            <span class="fr">Ces deux années en infogérance m'ont surtout montré la limite du tout-local : sans gestion centralisée, on reprend la main poste par poste et on traite les mêmes problèmes un par un, alors que beaucoup pourraient être anticipés à l'échelle du parc.</span>
+            <span class="en">These two years in managed IT services mainly showed me the limits of a purely on-premises setup: without centralised management, you take control machine by machine and handle the same issues one at a time, when many of them could be anticipated across the entire estate.</span>
+        </p>
+        <p class="contact-text">
+            <span class="fr">C'est ce que je veux aller apprendre : les solutions cloud de gestion de parc, de déploiement et de supervision, choisir les outils, les intégrer et les adapter au contexte de chaque structure. Passer de la résolution au ticket à la conception de ce qui tourne derrière. J'ai les bases (annuaire, GPO, réseau, pare-feu, virtualisation, supervision), je veux les transposer à cette échelle.</span>
+            <span class="en">That is exactly what I want to learn: cloud solutions for endpoint management, deployment and monitoring, choosing the right tools, integrating them and adapting them to each organisation. Moving from closing tickets to designing what runs underneath. I have the fundamentals (directory services, GPOs, networking, firewalls, virtualisation, monitoring) and I want to apply them at that scale.</span>
+        </p>
+        <p class="contact-text">
+            <span class="fr"><strong>Concrètement, je recherche une alternance où je pourrai travailler sur le déploiement et l'administration d'infrastructures gérées depuis le cloud, la centralisation d'un parc et sa supervision, aux côtés d'une équipe qui pratique déjà ces outils au quotidien.</strong></span>
+            <span class="en"><strong>In concrete terms, I am looking for an apprenticeship where I can work on deploying and administering cloud-managed infrastructure, centralising an IT estate and monitoring it, alongside a team that already works with these tools every day.</strong></span>
+        </p>
+        <div class="contact-facts">
+            <div class="fact"><span class="fact-key"><span class="fr">Rythme</span><span class="en">Schedule</span></span><span class="fact-val"><span class="fr">3 semaines en entreprise, 1 semaine à l'école</span><span class="en">3 weeks in-company, 1 week at school</span></span></div>
+            <div class="fact"><span class="fact-key"><span class="fr">Début</span><span class="en">Starting</span></span><span class="fact-val"><span class="fr">Novembre 2026</span><span class="en">November 2026</span></span></div>
+            <div class="fact"><span class="fact-key"><span class="fr">Secteur</span><span class="en">Area</span></span><span class="fact-val"><span class="fr">Toulouse et sa région</span><span class="en">Toulouse area, France</span></span></div>
+        </div>
 
         <a class="contact-cv" href="cv/CV_Sebastien_GUERRERO.pdf" target="_blank" rel="noopener">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
